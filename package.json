@@ -1,0 +1,22 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "packageManager": "yarn@3.5.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "sdk": "yarn dlx @yarnpkg/sdks vscode",
+    "common:build": "yarn workspace @monorepo/common build",
+    "server:dev": "yarn workspace @monorepo/server dev",
+    "server:stage": "yarn workspace @monorepo/server stage",
+    "server:main": "yarn workspace @monorepo/server main",
+    "server:deploy": "yarn workspace @monorepo/server deploy",
+    "web:dev": "yarn workspace @monorepo/web dev"
+  }
+}

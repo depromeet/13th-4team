@@ -1,0 +1,4 @@
+{
+  "root": false,
+  "extends": ["../../.eslintrc", "next/core-web-vitals"]
+}
