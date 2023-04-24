@@ -1,0 +1,5 @@
+{
+  "apps/server/{src,test}/**/*.ts": ["eslint"],
+  "apps/web/src/**/*.ts": ["eslint"],
+  "apps/common/src/**/*.ts": ["eslint"]
+}
