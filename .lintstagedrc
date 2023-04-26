@@ -1,5 +1,5 @@
 {
-  "apps/server/{src,test}/**/*.ts": ["eslint"],
-  "apps/web/src/**/*.ts": ["eslint"],
-  "apps/common/src/**/*.ts": ["eslint"]
+  "apps/server/{src,test}/**/*.ts": ["yarn workspace @monorepo/server lint"],
+  "apps/web/src/**/*.ts": ["yarn workspace @monorepo/web lint"],
+  "apps/common/src/**/*.ts": ["yarn workspace @monorepo/common lint"]
 }
