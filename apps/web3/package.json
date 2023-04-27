@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@monorepo/common": "workspace:^",
     "autoprefixer": "10.4.14",
-    "dayjs": "^1.11.7",
+    "dayjs": "1.11.7",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "next": "13.3.1",
@@ -22,6 +23,8 @@
   "devDependencies": {
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
-    "typescript": "5.0.4"
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "typescript": "^5.0.4"
   }
 }
