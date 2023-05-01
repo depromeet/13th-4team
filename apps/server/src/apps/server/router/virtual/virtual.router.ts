@@ -1,18 +1,9 @@
 import { Module } from '@nestjs/common';
+import { VirtualExceptionRouter } from './exception/virtual-exception.router';
 import { VirtualController } from './virtual.controller';
-import { ExceptionRouter } from './exception/exception.router';
-import { RouterModule } from '@nestjs/core';
 
 @Module({
-  imports: [
-    ExceptionRouter,
-    RouterModule.register([
-      {
-        module: ExceptionRouter,
-        path: 'virtual/exception',
-      },
-    ]),
-  ],
+  imports: [VirtualExceptionRouter],
   controllers: [VirtualController],
 })
 export class VirtualRouter {}
