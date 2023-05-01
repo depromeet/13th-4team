@@ -22,5 +22,9 @@
     "web:dev": "yarn workspace @monorepo/web3 dev",
     "web:build": "yarn workspace @monorepo/web3 build",
     "web:start": "yarn workspace @monorepo/web3 start"
+  },
+  "dependencies": {
+    "@monorepo/server": "workspace:^",
+    "class-validator": "^0.14.0"
   }
 }

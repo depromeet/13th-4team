@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "npx cross-env NODE_ENV=develop nest start --entryFile ./apps/server/main --watch --watchAssets",
+    "dev": "npx cross-env NODE_ENV=dev nest start --entryFile ./apps/server/main --watch --watchAssets",
     "stage": "npx cross-env NODE_ENV=stage nest start --entryFile ./apps/server/main --watch --watchAssets",
     "main": "npx cross-env NODE_ENV=main nest start --entryFile ./apps/server/main --watch --watchAssets",
     "deploy": "npx cross-env NODE_ENV=main nest build && npx cross-env NODE_ENV=main node ./apps/server/main",
