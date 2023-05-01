@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ExceptionContents } from 'src/apps/server/exceptions/exception.type';
+import { ExceptionResponse } from 'src/apps/server/exceptions/exception.type';
 import { EnvEnum } from '../env/env.enum';
 import { EnvService } from '../env/env.service';
 import { WebClient } from '@slack/web-api';
@@ -9,7 +9,7 @@ import { SlackBlockType } from './slack.enum';
 export class SlackService {
   constructor(private readonly envService: EnvService) {}
 
-  sendExceptionMessage(exception: ExceptionContents): void {
+  sendExceptionMessage(exception: ExceptionResponse): void {
     const { statusCode, title, message } = exception;
     const token: string = this.envService.get<string>(EnvEnum.SLACK_TOKEN);
     const web: WebClient = new WebClient(token);
