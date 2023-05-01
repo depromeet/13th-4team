@@ -43,13 +43,7 @@ import { IndexRouterModule } from './router/index.router';
           whitelist: true,
           forbidNonWhitelisted: true,
           exceptionFactory: (errors) => {
-            const errorString = ValidationException.factory(errors);
-
-            throw new ValidationException({
-              title: '데이터 형식이 맞지 않습니다.',
-              message: errorString,
-              raw: new Error(JSON.stringify(errors)),
-            });
+            throw new ValidationException(errors);
           },
         }),
     },

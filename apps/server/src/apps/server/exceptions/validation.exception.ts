@@ -1,28 +1,23 @@
 import { HttpStatus } from '@nestjs/common';
-import { BaseException } from './base.exception';
 import { ValidationError } from 'class-validator';
+import { BaseException } from './base.exception';
 
 export class ValidationException extends BaseException {
-  static factory(errors: ValidationError[]) {
-    return errors.map((error) => this.parseValidateError(error)).join('\n');
-  }
-
-  private static parseValidateError(error: ValidationError): string {
-    return `${error.property} / ${error.value} / ${Object.values(
-      error.constraints,
-    )
-      .map((value) => value)
-      .join(',')}`;
-  }
-
-  constructor(
-    properties: Pick<ValidationException, 'title' | 'message' | 'raw'>,
-  ) {
+  constructor(errors: ValidationError[]) {
     super({
       statusCode: HttpStatus.BAD_REQUEST,
-      title: properties.title,
-      message: properties.message,
-      raw: properties.raw,
+      title: '데이터 형식이 잘못되었습니다.',
+      message: errors
+        .map(
+          (error) =>
+            `${error.property} / ${error.value} / ${Object.values(
+              error.constraints,
+            )
+              .map((value) => value)
+              .join(',')}`,
+        )
+        .join('\n'),
+      raw: new Error(JSON.stringify(errors)),
     });
   }
 }
