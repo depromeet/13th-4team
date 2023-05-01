@@ -920,7 +920,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@monorepo/server@workspace:apps/server":
+"@monorepo/server@workspace:^, @monorepo/server@workspace:apps/server":
   version: 0.0.0-use.local
   resolution: "@monorepo/server@workspace:apps/server"
   dependencies:
@@ -6722,6 +6722,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "monorepo@workspace:."
   dependencies:
+    "@monorepo/server": "workspace:^"
+    class-validator: ^0.14.0
     eslint: ^8.38.0
     husky: ^8.0.3
     lint-staged: ^13.2.1
