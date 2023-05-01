@@ -20,6 +20,7 @@ export class BaseException extends HttpException {
   ) {
     super(properties.message, properties.statusCode);
     this.title = properties.title;
+    this.statusCode = properties.statusCode;
     this.raw = properties.raw;
   }
 
