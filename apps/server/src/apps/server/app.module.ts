@@ -3,16 +3,22 @@ import {
   Module,
   ValidationPipe,
 } from '@nestjs/common';
-import { IndexRouterModule } from './router/index.router';
+import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { DatabaseModule } from 'src/modules/database/database.module';
 import { EnvModule } from 'src/modules/env/env.module';
 import { LogModule } from 'src/modules/log/log.module';
-import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
+import { ValidationException } from './exceptions/validation.exception';
 import { CustomExceptionFilter } from './filters/custom-exception.filter';
 import { LogInterceptor } from './interceptors/log.interceptor';
+import { IndexRouterModule } from './router/index.router';
 
 @Module({
-  imports: [DatabaseModule, EnvModule, LogModule, IndexRouterModule],
+  imports: [
+    DatabaseModule.forRoot(),
+    EnvModule.forRoot(),
+    LogModule.forRoot(),
+    IndexRouterModule,
+  ],
   providers: [
     {
       provide: APP_FILTER,
@@ -36,8 +42,15 @@ import { LogInterceptor } from './interceptors/log.interceptor';
           },
           whitelist: true,
           forbidNonWhitelisted: true,
-          //Custom Exception으로 에러 변경 필요
-          exceptionFactory: (errors) => errors,
+          exceptionFactory: (errors) => {
+            const errorString = ValidationException.factory(errors);
+
+            throw new ValidationException({
+              title: '데이터 형식이 맞지 않습니다.',
+              message: errorString,
+              raw: new Error(JSON.stringify(errors)),
+            });
+          },
         }),
     },
   ],

@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IsInt, IsOptional, IsPositive } from 'class-validator';
+import { IsInt, IsOptional, IsPositive, MinLength } from 'class-validator';
 
 export class ExceptionTestQueryDto {
   @ApiPropertyOptional({ description: '양의 정수값', default: 0 })
@@ -7,4 +7,9 @@ export class ExceptionTestQueryDto {
   @IsInt()
   @IsPositive()
   positiveInt: number;
+
+  @ApiPropertyOptional({ description: '양의 정수값', default: '' })
+  @IsOptional()
+  @MinLength(4, { message: '최소 4글자 이상' })
+  min4Length: string;
 }

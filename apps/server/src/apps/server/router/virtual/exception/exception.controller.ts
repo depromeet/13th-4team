@@ -1,6 +1,7 @@
 import { Body, HttpStatus, Query } from '@nestjs/common';
 import { RouteTable } from 'src/apps/server/decorators/router/route-table.decorator';
 import { Route } from 'src/apps/server/decorators/router/route.decorator';
+import { LogService } from 'src/modules/log/log.service';
 import { ExceptionTestQueryDto } from './dto/exception-test-query.dto';
 import { ExceptionTestRequestBodyDto } from './dto/exception-test-request-body.dto';
 import { ExceptionTestResponseDto } from './dto/exception-test-response.dto';
@@ -10,6 +11,7 @@ import { ExceptionTestResponseDto } from './dto/exception-test-response.dto';
   path: '',
 })
 export class ExceptionController {
+  constructor(private readonly logService: LogService) {}
   @Route({
     summary: 'QueryParam Validation 에러 테스트',
     request: {
@@ -21,7 +23,7 @@ export class ExceptionController {
     },
   })
   async getExceptionTest(@Query() query: ExceptionTestQueryDto) {
-    console.log(query);
+    this.logService.info(ExceptionController.name, JSON.stringify(query));
     return new ExceptionTestResponseDto({
       ok: true,
     });
@@ -39,7 +41,7 @@ export class ExceptionController {
     description: '에러 테스트',
   })
   async postExceptionTest(@Body() body: ExceptionTestRequestBodyDto) {
-    console.log(body);
+    this.logService.info(ExceptionController.name, JSON.stringify(body));
 
     return new ExceptionTestResponseDto({
       ok: true,
