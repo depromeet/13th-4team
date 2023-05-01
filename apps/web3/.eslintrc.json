@@ -1,6 +1,0 @@
-{
-  "root": false,
-  "parser": "@typescript-eslint/parser",
-  "extends": ["../../.eslintrc", "next/core-web-vitals"],
-  "plugins": ["@typescript-eslint/eslint-plugin"]
-}
