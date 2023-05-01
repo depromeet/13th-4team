@@ -33,7 +33,7 @@ export class SlackService {
         },
       ],
       channel: '4팀-알림',
-      text: 'InsiteOut exception message',
+      text: 'InsightOut exception message',
     });
   }
 }
