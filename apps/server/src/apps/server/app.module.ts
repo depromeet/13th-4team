@@ -11,6 +11,7 @@ import { ValidationException } from './exceptions/validation.exception';
 import { CustomExceptionFilter } from './filters/custom-exception.filter';
 import { LogInterceptor } from './interceptors/log.interceptor';
 import { IndexRouterModule } from './router/index.router';
+import { SlackModule } from 'src/modules/slack/slack.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { IndexRouterModule } from './router/index.router';
     EnvModule.forRoot(),
     LogModule.forRoot(),
     IndexRouterModule,
+    SlackModule,
   ],
   providers: [
     {

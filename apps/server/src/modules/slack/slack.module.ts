@@ -4,5 +4,6 @@ import { SlackService } from './slack.service';
 @Module({
   imports: [],
   providers: [SlackService],
+  exports: [SlackService],
 })
 export class SlackModule {}
