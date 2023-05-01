@@ -914,7 +914,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monorepo/common@workspace:apps/common":
+"@monorepo/common@workspace:*, @monorepo/common@workspace:apps/common":
   version: 0.0.0-use.local
   resolution: "@monorepo/common@workspace:apps/common"
   languageName: unknown
@@ -924,6 +924,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@monorepo/server@workspace:apps/server"
   dependencies:
+    "@monorepo/common": "workspace:*"
     "@nestjs/cli": ^9.0.0
     "@nestjs/common": ^9.0.0
     "@nestjs/config": ^2.3.1

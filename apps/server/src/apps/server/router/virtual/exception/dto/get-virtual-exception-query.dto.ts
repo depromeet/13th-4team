@@ -1,7 +1,10 @@
+import type { api as API } from '@monorepo/common';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsInt, IsOptional, IsPositive, MinLength } from 'class-validator';
 
-export class ExceptionTestQueryDto {
+export class GetVirtualExceptionQueryDto
+  implements API.GetVirtualExceptionQuery
+{
   @ApiPropertyOptional({ description: '양의 정수값', default: 0 })
   @IsOptional()
   @IsInt()

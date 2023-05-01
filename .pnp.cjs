@@ -1470,6 +1470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./apps/server/",\
           "packageDependencies": [\
             ["@monorepo/server", "workspace:apps/server"],\
+            ["@monorepo/common", "workspace:apps/common"],\
             ["@nestjs/cli", "npm:9.3.0"],\
             ["@nestjs/common", "virtual:1b68021fbab7cc247c133c4f03853e873206252b59b05e7578677079a28b63a963057cc212358b93d4d62743a5ca2080c19ccc55242e48fde51eaae9bb0ae96f#npm:9.4.0"],\
             ["@nestjs/config", "virtual:1b68021fbab7cc247c133c4f03853e873206252b59b05e7578677079a28b63a963057cc212358b93d4d62743a5ca2080c19ccc55242e48fde51eaae9bb0ae96f#npm:2.3.1"],\
