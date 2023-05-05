@@ -6,9 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "npx cross-env NODE_ENV=dev nest start --entryFile ./apps/server/main --watch --watchAssets",
-    "stage": "npx cross-env NODE_ENV=stage nest start --entryFile ./apps/server/main --watch --watchAssets",
-    "main": "npx cross-env NODE_ENV=main nest start --entryFile ./apps/server/main --watch --watchAssets",
+    "prisma:generate": "yarn pnpify prisma generate",
+    "dev": "npx cross-env NODE_ENV=dev dotenv -e .env.dev -- nest start --entryFile ./apps/server/main --watch --watchAssets",
+    "stage": "npx cross-env NODE_ENV=stage dotenv -e .env.stage -- nest start --entryFile ./apps/server/main --watch --watchAssets",
+    "main": "npx cross-env NODE_ENV=main dotenv -e .env.main -- nest start --entryFile ./apps/server/main --watch --watchAssets",
     "deploy": "npx cross-env NODE_ENV=main nest build && npx cross-env NODE_ENV=main node ./apps/server/main",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "test": "jest 'src\\/.*\\.(controller|service|repository)\\.spec\\.ts$'"
@@ -25,6 +26,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "dayjs": "^1.11.7",
+    "dotenv-cli": "^7.2.1",
     "nest-winston": "^1.9.1",
     "reflect-metadata": "^0.1.13",
     "request-ip": "^3.3.0",
@@ -56,6 +58,9 @@
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.1.1",
     "typescript": "5.0.4"
+  },
+  "prisma": {
+    "schema": "src/modules/database/schema.prisma"
   },
   "jest": {
     "moduleFileExtensions": [
