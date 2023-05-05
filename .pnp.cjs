@@ -1502,6 +1502,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.14.0"],\
             ["dayjs", "npm:1.11.7"],\
+            ["dotenv-cli", "npm:7.2.1"],\
             ["eslint", "npm:8.38.0"],\
             ["eslint-config-prettier", "virtual:1b68021fbab7cc247c133c4f03853e873206252b59b05e7578677079a28b63a963057cc212358b93d4d62743a5ca2080c19ccc55242e48fde51eaae9bb0ae96f#npm:8.8.0"],\
             ["eslint-plugin-prettier", "virtual:1b68021fbab7cc247c133c4f03853e873206252b59b05e7578677079a28b63a963057cc212358b93d4d62743a5ca2080c19ccc55242e48fde51eaae9bb0ae96f#npm:4.2.1"],\
@@ -5229,6 +5230,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
           "packageDependencies": [\
             ["dotenv", "npm:16.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv-cli", [\
+        ["npm:7.2.1", {\
+          "packageLocation": "./.yarn/cache/dotenv-cli-npm-7.2.1-dba9b4a768-8ca27fd44b.zip/node_modules/dotenv-cli/",\
+          "packageDependencies": [\
+            ["dotenv-cli", "npm:7.2.1"],\
+            ["cross-spawn", "npm:7.0.3"],\
+            ["dotenv", "npm:16.0.3"],\
+            ["dotenv-expand", "npm:10.0.0"],\
+            ["minimist", "npm:1.2.8"]\
           ],\
           "linkType": "HARD"\
         }]\
