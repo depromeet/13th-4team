@@ -11,7 +11,7 @@
     "prisma:deploy": "dotenv -e .env.dev npx prisma migrate deploy",
     "studio:dev": "dotenv -e .env.dev npx prisma studio",
     "studio:stage": "dotenv -e .env.stage npx prisma studio",
-    "studio:prod": "dotenv -e .env.prod npx prisma studio",
+    "studio:main": "dotenv -e .env.main npx prisma studio",
     "dev": "npx cross-env NODE_ENV=dev dotenv -e .env.dev -- nest start --entryFile ./apps/server/main --watch --watchAssets",
     "stage": "npx cross-env NODE_ENV=stage dotenv -e .env.stage -- nest start --entryFile ./apps/server/main --watch --watchAssets",
     "main": "npx cross-env NODE_ENV=main dotenv -e .env.main -- nest start --entryFile ./apps/server/main --watch --watchAssets",
