@@ -39,3 +39,5 @@ lerna-debug.log*
 .env.main
 .env.stage
 .env.test
+
+prisma/test
