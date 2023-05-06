@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/web3",
+  "name": "@monorepo/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "dayjs": "^1.11.7",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
-    "next": "13.3.1",
+    "next": "13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",

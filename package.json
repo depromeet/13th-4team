@@ -19,8 +19,8 @@
     "server:stage": "yarn workspace @monorepo/server stage",
     "server:main": "yarn workspace @monorepo/server main",
     "server:deploy": "yarn workspace @monorepo/server deploy",
-    "web:dev": "yarn workspace @monorepo/web3 dev",
-    "web:build": "yarn workspace @monorepo/web3 build",
-    "web:start": "yarn workspace @monorepo/web3 start"
+    "web:dev": "yarn workspace @monorepo/web dev",
+    "web:build": "yarn workspace @monorepo/web build",
+    "web:start": "yarn workspace @monorepo/web start"
   }
 }
